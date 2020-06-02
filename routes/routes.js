@@ -1,20 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const AnimalController = require('../controllers/AnimalController');
 
-router.get('/', (req, res, next) => {
-        const msg = 'primeira função executada ';
-        console.log(msg);
-        res.json(msg);
-    }
-);
-
-
-router.get('/teste', (req, res, next) => {
-        const msg = 'teste';
-        console.log(msg);
-        res.json(msg);
-    }
-);
+router.get('/animals', AnimalController.findAll);
+router.get('/animals/:id', AnimalController.findById);
+router.post('/animals', AnimalController.save);
 
 module.exports = router;
 
