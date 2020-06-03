@@ -1,10 +1,14 @@
+require('../model/Animal');
+const PORT = 3000;
+
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const routes = require('../routes/routes');
-const PORT = 3000;
 
 app.set('port', PORT);
 
+app.use(bodyParser.json());
 app.use('/', routes);
 
 module.exports = app;

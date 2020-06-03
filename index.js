@@ -1,3 +1,4 @@
+require('./config/connection');
 const app = require('./config/app')
 
 
