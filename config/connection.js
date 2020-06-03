@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const uri = "mongodb://admin:admin123@ds141208.mlab.com:41208/animal_test";
 
 const options = {
     useNewUrlParser: true,
@@ -7,5 +6,5 @@ const options = {
     useFindAndModify: false
 }
 
-mongoose.connect(uri, options).catch(error => console.log(error));
+mongoose.connect(process.env.DATABASE_URI, options).catch(error => console.log(error));
 mongoose.connection.on('error', (error) => {console.log(error);});

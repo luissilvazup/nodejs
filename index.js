@@ -1,3 +1,4 @@
+require('dotenv').config({path: './environmentVariables/variables.env'});
 require('./config/connection');
 const app = require('./config/app')
 
